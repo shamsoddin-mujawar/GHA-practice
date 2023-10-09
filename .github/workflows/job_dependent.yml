@@ -1,0 +1,20 @@
+name: JOB_DEPENDENT
+on: workflow_dispatch
+jobs:
+  First-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "Hello world!"
+
+  Second-job:
+    needs: First-job
+    runs-on: macos-latest
+    steps:
+      - name: print name
+        run: echo "Hello sham..."
+
+
+
+
+
