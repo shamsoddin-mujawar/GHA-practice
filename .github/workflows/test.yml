@@ -1,0 +1,9 @@
+name: FIRST_TEST_WORKFLOWS  
+on: workflow_dispatch   
+jobs: 
+  First-job: 
+    runs-on: ubuntu-latest 
+    name: Run-Tests
+    steps: 
+      - name: print hello 
+        run: echo "Hello world!" 
