@@ -1,5 +1,6 @@
 FROM python
 LABEL authors="shamsoddin"
 COPY first.py /first.py
-COPY common/second.py /second.py
+COPY common /common
+RUN la -a
 ENTRYPOINT ["python", "/first.py"]
