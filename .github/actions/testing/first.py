@@ -1,6 +1,6 @@
 import os
 
-from second import fun
+from common.second import fun
 
 num1 = os.getenv('INPUT_A')
 num2 = os.getenv('INPUT_B')
