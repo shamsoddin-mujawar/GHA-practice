@@ -1,0 +1,14 @@
+name: 'Load RA Config'
+description: 'Load the pipeline configuration file for an RA-Unit.'
+inputs:
+  a:
+    description: 'a'
+    required: true
+    default: '1'
+  b:
+    description: "b"
+    required: true
+    default: "2"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
