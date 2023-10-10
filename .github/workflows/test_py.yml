@@ -1,0 +1,16 @@
+name: "PYTHON"
+on:
+  workflow_dispatch:
+jobs:
+    PYTHON:
+        runs-on: ubuntu-latest
+        steps:
+
+          - name: Checkout code
+            uses: actions/checkout@v4
+
+          - name: Run python
+            uses: ./.github/actions/testing
+            with:
+              a: 15
+              b: 15
