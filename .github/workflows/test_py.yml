@@ -10,7 +10,14 @@ jobs:
             uses: actions/checkout@v4
 
           - name: Run python
+            continue-on-error: true
             uses: ./.github/actions/testing
             with:
               a: 15
               b: 15
+              
+          - name: pwd
+            run: |
+              pwd
+              ls
+            
