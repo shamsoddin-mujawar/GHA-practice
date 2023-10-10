@@ -1,4 +1,4 @@
-from common.third import mini
+from third import mini
 
 
 def fun(aa, bb):
