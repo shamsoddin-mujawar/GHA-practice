@@ -1,0 +1,10 @@
+name: CUSTOM_VARIABLE
+on: workflow_dispatch
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    env: 
+      MY_VAR: "World"
+    steps:
+      - name: print actor name
+        run: echo "Env variable name is - $MY_VAR"
