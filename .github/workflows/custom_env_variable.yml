@@ -9,24 +9,24 @@ jobs:
       MY_VAR: "World"  # declare for 'first-job' or local level.
     steps:
       - name: print my_var
-        run: echo "Env variable name is - $MY_VAR"
+        run: |
+          echo "Env variable name is - $MY_VAR"  # World
+          echo "print using expression - ${{ env.MY_VAR }}" # World
 
-      - name: accessing using expression
-        run: echo "variable - ${{ env.MY_VAR }}"
-      
+
       - name: accessing global env variable
         run: |
-          echo "print port traditional way - $PORT"
-          echo "print via expression = ${{ env.PORT }}"
-  
+          echo "print port traditional way - $PORT"  # 8080
+          echo "print via expression = $ {{ env.PORT }}" # 8080
+
   Second-job:
     needs: First-job
     runs-on: ubuntu-latest
     steps:
       - name: print env
-        run: echo "Env variable name is - $MY_VAR"
-        
+        run: echo "Env variable name is - $MY_VAR"  # it will not print MY_VAR declare locally for specific job.
+
       - name: accessing global env variable in job 2
         run: |
-          echo "print port traditional way - $PORT"
-          echo "print via expression = ${{ env.PORT }}"
+          echo "print port traditional way - $PORT"   # o/p 8080 
+          echo "print via expression = $ {{ env.PORT }}"  # 8080
