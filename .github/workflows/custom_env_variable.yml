@@ -9,6 +9,9 @@ jobs:
       - name: print actor name
         run: echo "Env variable name is - $MY_VAR"
 
+      - name: accessing using expression
+        run: echo "variable - ${{ env.MY_VAR }}
+
   Second-job:
     needs: First-job
     runs-on: ubuntu-latest
