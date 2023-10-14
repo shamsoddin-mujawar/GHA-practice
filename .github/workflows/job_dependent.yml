@@ -8,7 +8,7 @@ jobs:
         run: echo "Hello world!
 
   Second-job:
-    # needs: First-job
+    needs: First-job
     runs-on: macos-latest
     steps:
       - name: print name
