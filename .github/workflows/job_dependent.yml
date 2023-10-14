@@ -2,13 +2,13 @@ name: JOB_DEPENDENT
 on: workflow_dispatch
 jobs:
   First-job:
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: print hello
         run: echo "Hello world!
 
   Second-job:
-    continue-on-error: true
     needs: First-job
     runs-on: macos-latest
     steps:
