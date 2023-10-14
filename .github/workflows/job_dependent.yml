@@ -8,6 +8,7 @@ jobs:
         run: echo "Hello world!
 
   Second-job:
+    continue-on-error: true
     needs: First-job
     runs-on: macos-latest
     steps:
