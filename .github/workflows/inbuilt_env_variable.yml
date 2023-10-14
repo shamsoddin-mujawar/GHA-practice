@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print env variable
-        run: echo "env variable is - $GITHUB_ACTOR
+        run: echo "GitHub default GITHUB_ACTOR variable value is - $GITHUB_ACTOR"
