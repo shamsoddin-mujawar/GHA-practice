@@ -1,0 +1,16 @@
+name: CONTINUE_ON_ERROR
+on: workflow_dispatch
+jobs:
+  First-job:
+    continue-on-error: true  
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "Hello world!
+
+  Second-job:
+    needs: First-job
+    runs-on: macos-latest
+    steps:
+      - name: print name
+        run: echo "Hello sham..."
