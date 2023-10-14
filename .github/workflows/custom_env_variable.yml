@@ -1,21 +1,32 @@
 name: CUSTOM_VARIABLE
 on: workflow_dispatch
+env:
+  PORT: 8080   # declare global level
 jobs:
   First-job:
     runs-on: ubuntu-latest
-    env: 
-      MY_VAR: "World"
+    env:
+      MY_VAR: "World"  # declare for 'first-job' or local level.
     steps:
-      - name: print actor name
+      - name: print my_var
         run: echo "Env variable name is - $MY_VAR"
 
       - name: accessing using expression
-        run: echo "variable - ${{ env.MY_VAR }}"
-
+        run: echo "variable - ${{ env.MY_VAR }}
+      
+      - name: accessing global env variable
+        run: |
+          echo "print port traditional way - $PORT"
+          echo "print via expression = $ {{ env.PORT }}
+  
   Second-job:
     needs: First-job
     runs-on: ubuntu-latest
     steps:
-    - name: print env
-      run: echo "Env variable name is - $MY_VAR"
+      - name: print env
+        run: echo "Env variable name is - $MY_VAR"
         
+      - name: accessing global env variable in job 2
+        run: |
+          echo "print port traditional way - $PORT"
+          echo "print via expression = $ {{ env.PORT }}
