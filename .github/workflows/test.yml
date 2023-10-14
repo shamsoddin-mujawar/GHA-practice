@@ -1,4 +1,3 @@
-name: FIRST_TEST_WORKFLOWS  
 on: workflow_dispatch   
 jobs: 
   First-job: 
