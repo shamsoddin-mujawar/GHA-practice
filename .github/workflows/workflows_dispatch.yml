@@ -15,16 +15,23 @@ on:
         description: 'Test scenario tags'
         required: false
         type: boolean
+      name:
+        description: "name"
+        required: false
+        type: string
 jobs:
   log-inputs:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: printing values
+        run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
+          echo "Name : $NAME"
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
+          NAME: ${{ inputs.name }}
 
 
 
