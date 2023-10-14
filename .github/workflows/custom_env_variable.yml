@@ -12,12 +12,12 @@ jobs:
         run: echo "Env variable name is - $MY_VAR"
 
       - name: accessing using expression
-        run: echo "variable - ${{ env.MY_VAR }}
+        run: echo "variable - ${{ env.MY_VAR }}"
       
       - name: accessing global env variable
         run: |
           echo "print port traditional way - $PORT"
-          echo "print via expression = $ {{ env.PORT }}
+          echo "print via expression = $ {{ env.PORT }}"
   
   Second-job:
     needs: First-job
@@ -29,4 +29,4 @@ jobs:
       - name: accessing global env variable in job 2
         run: |
           echo "print port traditional way - $PORT"
-          echo "print via expression = $ {{ env.PORT }}
+          echo "print via expression = $ {{ env.PORT }}"
