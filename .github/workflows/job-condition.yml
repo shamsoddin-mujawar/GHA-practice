@@ -6,4 +6,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: run command
-    - run: echo "executing job condition "
+      run: echo "executing job condition "
