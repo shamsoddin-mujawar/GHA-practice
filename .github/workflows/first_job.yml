@@ -1,0 +1,11 @@
+name: jobs
+on: workflow_dispatch
+jobs:
+  my_first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: My first job
+        run: |
+          echo "print job status of current job.."
+          echo " ${{jobs.status}}"
+ 
