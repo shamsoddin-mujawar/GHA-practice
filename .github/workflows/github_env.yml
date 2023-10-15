@@ -25,6 +25,7 @@ jobs:
 
 
   Second:
+    needs: First
     runs-on: ubuntu-latest
     steps:
       - name: fetch add variable in second job
