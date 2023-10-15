@@ -1,9 +1,17 @@
 name: JOB_CONDITION
 on: workflow_dispatch
 jobs:
- test2:
-  if: github.repository == 'shamsoddin-mujawar/GHA_pra'  
+ test1:
+  if: github.repository == 'shamsoddin-mujawar/GHA_practice'
   runs-on: ubuntu-latest
   steps:
     - name: run command
       run: echo "executing job condition "
+
+ test2:
+   if: jobs.test1.result == 'success'
+   runs-on: ubuntu-latest
+   steps:
+     - name: second job
+       run: echo 'second job'
+
