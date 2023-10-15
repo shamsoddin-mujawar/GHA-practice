@@ -2,16 +2,16 @@ name: JOB_CONDITION
 on: workflow_dispatch
 jobs:
   test1:
-    if: github.repository == 'shamsoddin-mujawar/GHA-practice'
+    if: github.repository == 'shamsoddin-mujawar/GHA_practice'
     runs-on: ubuntu-latest
     steps:
       - name: run command
-        run: echo "executing job condition 
+        run: echo "executing job condition "
 
   test2:
     needs: test1
     runs-on: ubuntu-latest
     steps:
       - name: second job
-        run: echo 'second job'
+        run: echo 'previous job status - ${{ needs.test1.result }}'
 
