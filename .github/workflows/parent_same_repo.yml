@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: calling child workflows
-        uses: ./.github/workflows/child.yml
+        uses: shamsoddin-mujawar/nodejs-updates/.github/workflows/child_workflows.yml@main
