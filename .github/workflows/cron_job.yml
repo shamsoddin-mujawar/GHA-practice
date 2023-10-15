@@ -1,7 +1,7 @@
 name: CRON_JOB_RUN_EVERY_MIN
 on:
   schedule:
-    - cron: '*/1 * * * *' 
+    - cron: '* * * * *' 
 jobs:
   setup:
     runs-on: ubuntu-latest
