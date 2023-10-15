@@ -1,0 +1,8 @@
+name: SAME_REPO_PARENT
+on: workflow_dispatch
+jobs:
+  Parent-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: calling child workflows
+        uses: ./.github/workflows/child.yml
