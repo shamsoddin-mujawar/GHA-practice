@@ -1,0 +1,9 @@
+name: PUSH_JOB
+on: 
+  push:
+jobs:
+  push-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: push job
+        run: echo "hello job"
