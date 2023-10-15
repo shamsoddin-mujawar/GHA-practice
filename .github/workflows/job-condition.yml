@@ -2,11 +2,12 @@ name: JOB_CONDITION
 on: workflow_dispatch
 jobs:
   test1:
+    continue-on-error: true
     if: github.repository == 'shamsoddin-mujawar/GHA-practice'
     runs-on: ubuntu-latest
     steps:
       - name: run command
-        run: echo "executing job condition "
+        run: echo "executing job condition 
 
   test2:
     needs: test1
