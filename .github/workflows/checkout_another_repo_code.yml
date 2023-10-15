@@ -1,3 +1,4 @@
+name: CHECKOUT_ANOTHER_REPO_CODE
 on: workflow_dispatch
 jobs:
   First-job:
