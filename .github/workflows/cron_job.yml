@@ -1,5 +1,5 @@
 name: CRON_JOB
-# on:
+on: workflow_dispatch
 #   schedule:
 #     - cron: '*/5 * * * *'
 env:
