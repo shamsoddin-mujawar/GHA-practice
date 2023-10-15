@@ -1,9 +1,9 @@
 name: PUSH_JOB
 on:
   push:
-    branches:
-      - 'main'
-      - 'test'
+    # branches:
+    #   - 'main'
+    #   - 'test'
     paths:
       - '**.py'
 jobs:
