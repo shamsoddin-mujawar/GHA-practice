@@ -1,8 +1,5 @@
 name: SAME_REPO_PARENT
 on: workflow_dispatch
 jobs:
-  Parent-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: calling child workflows
-        uses: shamsoddin-mujawar/nodejs-updates/.github/workflows/child_workflows.yml@main
+  parent-job:
+      uses: shamsoddin-mujawar/nodejs-updates/.github/workflows/child_workflows.yml@main
