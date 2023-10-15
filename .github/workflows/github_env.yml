@@ -18,13 +18,15 @@ jobs:
       - name: fetch add variable value
         run: |
           echo " value is - $add"
+      
+      - name: set variable as global level 
+        run: |
+          $VAR=$add
 
-  
+
   Second:
-    needs: First
     runs-on: ubuntu-latest
     steps:
       - name: fetch add variable in second job
         run: |
-          echo " value is - $add"
-    
+          echo " value is - $VAR"
