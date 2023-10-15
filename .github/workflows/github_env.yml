@@ -7,3 +7,10 @@ jobs:
       - name: github_env
         run: |
           echo "print Github env variable - $GITHUB_ENV"
+          echo " job id of First job - $GITHUB_JOB"
+  
+  Second: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: github job id
+        run :  echo " job id of Second job - $GITHUB_JOB"
