@@ -2,7 +2,7 @@ name: JOB_CONDITION
 on: workflow_dispatch
 jobs:
   test1:
-    if: github.repository == 'shamsoddin-mujawar/GHA_practice'
+    if: github.repository == 'shamsoddin-mujawar/GHA-practice'
     runs-on: ubuntu-latest
     steps:
       - name: run command
