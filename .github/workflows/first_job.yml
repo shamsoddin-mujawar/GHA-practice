@@ -7,5 +7,5 @@ jobs:
       - name: My first job
         run: |
           echo "print job status of current job.."
-          echo " ${{jobs.status}}"
+          echo " ${{job.status}}"
  
