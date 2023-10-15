@@ -15,3 +15,17 @@ jobs:
         with:
           name: variable
           path: ${{ env.name }}
+
+  download:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Download artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: variable
+
+        - name: Print the artifact value
+          shell: bash
+          run: |
+            value=`cat variable.txt`
+            echo "The Variable value is -   $value" 
