@@ -14,18 +14,19 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: variable
-          path: ${{ env.name }}
+#          path: ${{ env.name }}
 
   download:
+    needs: upload
     runs-on: ubuntu-latest
     steps:
-        - name: Download artifact
-          uses: actions/download-artifact@v3
-          with:
-            name: variable
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: variable
 
-        - name: Print the artifact value
-          shell: bash
-          run: |
-            value=`cat variable.txt`
-            echo "The Variable value is -   $value" 
+      - name: Print the artifact value
+        shell: bash
+        run: |
+          value=`cat variable.txt`
+          echo "The Variable value is -   $value"
