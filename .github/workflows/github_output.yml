@@ -4,7 +4,7 @@ jobs:
   First:
     runs-on: ubuntu-latest
     outputs:
-      out: ${{ steps.custom_step.outputs.result }}
+      out: ${{ steps.out_name.outputs.sum }}
     steps:
       - name: set output
         id: out_name
@@ -13,7 +13,7 @@ jobs:
 
       - name: print output
         run: |
-          echo " ${{ steps.out_name.outputs.sum }}
+          echo " ${{ steps.out_name.outputs.sum }}"
   
   Second:
     runs-on: ubuntu-latest
