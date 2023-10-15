@@ -1,6 +1,9 @@
 name: PUSH_JOB
-on: 
+on:
   push:
+    branches:
+      - 'main'
+      - 'test'
 jobs:
   push-job:
     runs-on: ubuntu-latest
