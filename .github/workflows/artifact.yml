@@ -14,7 +14,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: variable
-#          path: ${{ env.name }}
+         path: ${{ env.name }}
 
   download:
     needs: upload
