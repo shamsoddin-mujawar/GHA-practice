@@ -1,0 +1,14 @@
+name: GITHUB_OUTPUT
+on: workflow_dispatch
+jobs:
+  First:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set output
+        id: out_name
+        run: |
+          echo "sum=None" >> "$GITHUB_OUTPUT"
+
+      - name: print output
+        run: |
+          echo " Value of output is - ${{ steps.out_name.outputs.sum }}
