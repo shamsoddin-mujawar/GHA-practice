@@ -1,0 +1,14 @@
+name: ARTIFACT
+on: workflow_dispatch
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set variable value
+        run: echo "name=Shamsoddin" >> "$GITHUB_ENV"
+
+      - name: upload data on artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: variable
+          path: ${{ env.name }}
