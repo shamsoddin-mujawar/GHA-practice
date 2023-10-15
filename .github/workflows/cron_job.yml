@@ -1,0 +1,9 @@
+name: CRON_JOB_RUN_EVERY_MIN
+on:
+  schedule:
+    - cron: '*/1 * * * *' 
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World..."
