@@ -2,7 +2,6 @@ name: JOB_CONDITION
 on: workflow_dispatch
 jobs:
   test1:
-    continue-on-error: true
     if: github.repository == 'shamsoddin-mujawar/GHA-practice'
     runs-on: ubuntu-latest
     steps:
