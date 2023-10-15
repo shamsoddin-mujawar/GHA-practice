@@ -1,0 +1,11 @@
+name: PULL_REQUEST
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull request
+        run: echo "running pull request"
