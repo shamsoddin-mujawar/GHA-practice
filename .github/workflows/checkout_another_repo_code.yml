@@ -6,7 +6,7 @@ jobs:
       - name: Checkout another repository
         uses: actions/checkout@v3
         with:
-          repository: ${{ shamsoddin-mujawar }}/nodejs-updates
+          repository: shamsoddin-mujawar/nodejs-updates
 
 
 
