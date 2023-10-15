@@ -4,13 +4,15 @@ jobs:
   First:
     runs-on: ubuntu-latest
     steps:
-      - name: github_env
+      - name: print github env
         run: |
           echo "print Github env variable - $GITHUB_ENV"
           echo " job id of First job - $GITHUB_JOB"
-  
-  Second: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: github job id
-        run :  echo " job id of Second job - $GITHUB_JOB"
+        
+      - name: set variable using github env
+        run: |
+          echo "add=15" >> "$GITHUB_ENV"
+        
+      - name: fetch add variable value
+        run: |
+          echo " value is - $add"
