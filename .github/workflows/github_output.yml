@@ -11,4 +11,4 @@ jobs:
 
       - name: print output
         run: |
-          echo " Value of output is - ${{ steps.out_name.outputs.sum }}
+          echo " Value of output is - ${{ steps.out_name.outputs.sum }}"
