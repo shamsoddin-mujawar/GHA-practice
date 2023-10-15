@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: set variable value
-        run: echo "name=Shamsoddin" >> "$GITHUB_ENV"
+
+        run: |
+          echo shamsoddin > variable.txt
+          echo "name=variable.txt" >> "$GITHUB_ENV"
 
       - name: upload data on artifact
         uses: actions/upload-artifact@v3
