@@ -10,7 +10,7 @@ jobs:
 
   test2:
     needs: test1
-    if: jobs.test1.result == 'success'
+    if: needs.test1.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: second job
