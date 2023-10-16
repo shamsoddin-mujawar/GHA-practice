@@ -4,7 +4,11 @@ jobs:
   FIRST-JOB:
     runs-on: ubuntu-latest
     steps:
-      - id: comp
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: calling composite custom action
+        id: comp
         uses: ./.github/actions/composite-action
 
       - name: print variable output value
