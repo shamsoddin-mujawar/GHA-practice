@@ -1,7 +1,7 @@
 name: "Composite actions"
 description: "Testing composite actions"
 outputs:
-  random-number:
+  number:
     description: "output value"
     value: ${{ steps.git_out.outputs.result }}
 runs:
