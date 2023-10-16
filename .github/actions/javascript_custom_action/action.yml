@@ -1,0 +1,13 @@
+name: 'JAVASCRIPT ACTIONS'
+description: 'TESTING JAVASCRIPT ACTIONS'
+inputs:
+  name:  # id of input
+    description: 'Enter the name'
+    required: true
+    default: 'Mujawar'
+outputs:
+  user_name: # id of output
+    description: 'output os name...'
+runs:
+  using: 'node20'
+  main: 'test_jy.js'
