@@ -1,0 +1,25 @@
+name: "Composite actions"
+description: "Testing composite actions"
+outputs:
+  random-number:
+    description: "output value"
+    value: ${{ steps.git_out.outputs.result }}
+runs:
+  using: "composite"
+  steps:
+    - name: print pwd
+      run: |
+        echo "print working dir - " 
+        pwd
+      shell: bash
+
+    - name: github env
+      run: |
+        echo "sum=15" >> "$GITHUB_ENV"
+      shell: bash
+
+    - name: github_output
+      id: git_out
+      run: |
+        echo "result=30" >> "$GITHUB_OUTPUT"
+      shell: bash
