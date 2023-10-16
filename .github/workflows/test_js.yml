@@ -1,0 +1,15 @@
+name: JAVASCRIPT_WORKFLOWS
+on: workflow_dispatch
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: calling javascript workflow
+        id: hello
+        uses: ./github/actions/testing-javascript-action
+        with:
+          name: 'Samir'
+
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
