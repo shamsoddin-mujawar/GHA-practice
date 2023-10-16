@@ -9,7 +9,7 @@ jobs:
       
       - name: calling javascript workflow
         id: hello
-        uses: ./github/actions/javascript_custom_action
+        uses: ./.github/actions/javascript_custom_action
         with:
           name: 'Samir'
 
