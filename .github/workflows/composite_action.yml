@@ -6,10 +6,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: calling composite custom action
         id: comp
         uses: ./.github/actions/composite-action
+        with:
+          name: "samir"
 
       - name: print variable output value
         run: echo "output value is - ${{ steps.comp.outputs.number }}"
