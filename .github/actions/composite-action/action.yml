@@ -1,5 +1,10 @@
 name: "Composite actions"
 description: "Testing composite actions"
+inputs:
+  name:
+    description: "enter name..."
+    required: false
+    default: "Mujawar"
 outputs:
   number:
     description: "output value"
@@ -9,8 +14,7 @@ runs:
   steps:
     - name: print pwd
       run: |
-        echo "print working dir - " 
-        pwd
+        echo "Name is - ${{ inputs.name }}
       shell: bash
 
     - name: github env
