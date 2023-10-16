@@ -5,11 +5,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: checkout other repo code
-        uses: actions/checkout@v4
         with:
-          repository: shamsoddin-mujawar/GHA-actions-python
           ref: main
-          path: GHA-actions-python
+          path: GHA-practice
+      
+      - name: working dir
+        run: pwd
+
+  Second:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+         repository: shamsoddin-mujawar/GHA-actions-python
+         ref: main
+         path: GHA-actions-python
+        
+      - name: working dir
+        run: pwd
 
