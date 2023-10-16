@@ -12,7 +12,7 @@ jobs:
         uses: ./.github/actions/composite-action
 
       - name: print variable output value
-        run: echo "output value is - ${{ steps.comp.outputs.result }}"
+        run: echo "output value is - ${{ steps.comp.outputs.number }}"
 
       - name: print github env var value
         run: echo " sum is - $sum"
