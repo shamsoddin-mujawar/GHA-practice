@@ -7,4 +7,5 @@ jobs:
       - name: print hello 
         run: |
           echo "Hello world!"
+          
           echo "GHA - ${GITHUB_SHA}"
