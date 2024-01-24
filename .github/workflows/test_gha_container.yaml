@@ -1,4 +1,4 @@
-name: Container
+name: CONTAINER_FOR_JOB
 on: 
   workflow_dispatch:
 jobs:
@@ -16,3 +16,9 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+
+      - name: ls
+        run: |
+          echo "list"
+          pwd
+          ls
