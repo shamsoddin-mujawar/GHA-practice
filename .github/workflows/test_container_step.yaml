@@ -1,0 +1,34 @@
+name: TEST_RUNNER_AND_CONTAINER
+on:
+  workflow_dispatch:
+
+jobs:
+  pre-container-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pre-container steps
+        run: |
+          echo "This step runs on the runner"
+          echo "Perform any necessary setup here"
+          echo "running commads inside the runer"
+          pwd
+          ls
+
+  container-test-job:
+    needs: pre-container-job
+    runs-on: ubuntu-latest
+    services:
+      my-service:
+        image: nginx:latest
+        ports:
+          - 8080:80
+        options: --name my-nginx
+
+    steps:
+      - name: Use NGINX container for this step
+        run: |
+          docker exec my-nginx echo "Hello from NGINX container"
+          docker exec my-nginx ls /usr/share/nginx/html
+          echo "running commads inside the container"
+          pwd
+          ls
