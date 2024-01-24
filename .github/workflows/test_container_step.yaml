@@ -13,6 +13,10 @@ jobs:
           echo "running commads inside the runer"
           pwd
           ls
+      - name: run nginx
+        run: |
+         curl http://localhost:8080
+         sleep 60
 
   container-test-job:
     needs: pre-container-job
@@ -32,3 +36,10 @@ jobs:
           echo "running commads inside the container"
           pwd
           ls
+          
+      - name: run nginx command
+        run: |
+          curl http://localhost:8080
+
+
+          sleep 180
