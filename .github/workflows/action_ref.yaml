@@ -1,12 +1,9 @@
 name: Action_ref
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
-  #     - feature/*
-  #   tags:
-  #     - v*
+  push:
+    branches:
+      - main
 
 jobs:
   build:
