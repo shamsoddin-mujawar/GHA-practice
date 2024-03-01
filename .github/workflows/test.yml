@@ -9,3 +9,16 @@ jobs:
           echo "Hello world!"
           
           echo "GHA - ${GITHUB_SHA}"
+
+      - uses: macnev2013/manual-approval@latest
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: shamsoddin-mujawar
+          minimum-approvals: 1
+          approval-wait: 1
+          issue-title: 'Manual Approval'
+          issue-body: |
+            "Issue Body"
+
+      - name: print
+        run: echo "hello"
