@@ -9,6 +9,11 @@ jobs:
           echo "Hello world!"
           
           echo "GHA - ${GITHUB_SHA}"
+          
+      - name: custom action
+        uses: docker-action/action@v1
+        with:
+          image: nginx
 
       - name: print
         run: echo "hello"
