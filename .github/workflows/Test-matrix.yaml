@@ -1,0 +1,20 @@
+name:  pipeline
+on:
+  workflow_dispatch:
+
+jobs:
+  rainbow:
+    name: rainbow 
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        include:
+          - image: "api-server"
+            services: "api"
+          - image: "reporting"
+            services: "report"
+    steps:
+      - name: test
+        run: |
+          echo "service name: ${{matrix.services}}"
