@@ -18,6 +18,5 @@ jobs:
   debug:
     needs: [build, deploy]
     runs-on: ubuntu-latest
-    if: ${{ failure() }}
     steps:
       - run: echo "Deploying build ${{ needs.build.outputs.build_id }}"
